@@ -35,6 +35,8 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
+(setq inferior-lisp-program "/usr/local/bin/sbcl")
+
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
@@ -51,3 +53,6 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(after! cc-mode (setq c-basic-offset 4)) ; set it globally
+(setq-hook! 'c++-mode-hook c-basic-offset 4) ; set it in c++-mode buffers
